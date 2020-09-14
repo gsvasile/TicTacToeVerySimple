@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using TicTacToe.Logic;
 
 namespace TicTacToe
 {
@@ -20,8 +15,17 @@ namespace TicTacToe
         public TicTacToeGUI()
         {
             InitializeComponent();
-            ticTacToeGame.FoundAWinner += OnFoundAwinner;
+            InitializeButtonGrid();
             ClearGameBoardAndIndicators();
+            // Register the event for when a winner is found.
+            ticTacToeGame.FoundAWinner += OnFoundAwinner;
+        }
+
+        /// <summary>
+        /// Constructs the button grid.
+        /// </summary>
+        private void InitializeButtonGrid()
+        {
             buttonGrid = new Button[3, 3]
             {
                 { zeroZeroButton, zeroOneButton, zeroTwoButton },
@@ -66,11 +70,11 @@ namespace TicTacToe
         /// </summary>
         private void ClearGameBoardAndIndicators()
         {
-            foreach(Control control in gameBoard.Controls)
+            foreach(var button in buttonGrid)
             {
-                control.Enabled = true;
-                control.Text = string.Empty;
-                SetButtonBackColor(control as Button, DefaultBackColor);
+                button.Enabled = true;
+                button.Text = string.Empty;
+                SetButtonBackColor(button, DefaultBackColor);
             }
 
             gameResultTextBox.Text = startingMessage;
@@ -96,9 +100,9 @@ namespace TicTacToe
         /// </summary>
         private void OnFoundAwinner(object sender, EventArgs args)
         {
-            foreach(Control control in gameBoard.Controls)
+            foreach(var button in buttonGrid)
             {
-                control.Enabled = false;
+                button.Enabled = false;
             }
 
             string gameResult = string.Empty;

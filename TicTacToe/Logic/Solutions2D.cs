@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
 
-namespace TicTacToe
+namespace TicTacToe.Logic
 {
     /// <summary>
     /// This has the solutions for the basic 2d Tic-Tac-Toe.
