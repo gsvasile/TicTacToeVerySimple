@@ -1,3 +1,4 @@
 .vs/
 /TicTacToe/obj/
 *.pdb
+Debug/
