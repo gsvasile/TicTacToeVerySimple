@@ -1,4 +1,4 @@
 .vs/
 /TicTacToe/obj/
-/TicTacToe/Debug/
+/TicTacToe/bin/Debug/
 *.pdb
