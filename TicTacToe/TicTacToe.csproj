@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Solutions2D.cs" />
+    <Compile Include="Logic\Solutions2D.cs" />
     <Compile Include="TicTacToeGui.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,7 +55,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TicTacToeLogic.cs" />
+    <Compile Include="Logic\TicTacToeLogic.cs" />
     <EmbeddedResource Include="TicTacToeGui.resx">
       <DependentUpon>TicTacToeGui.cs</DependentUpon>
     </EmbeddedResource>
